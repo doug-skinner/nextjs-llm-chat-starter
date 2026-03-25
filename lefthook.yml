@@ -1,0 +1,10 @@
+pre-commit:
+  commands:
+    lint-fix:
+      glob: "*.{js,jsx,ts,tsx,mjs}"
+      run: npx eslint --fix {staged_files} && git add {staged_files}
+
+pre-push:
+  commands:
+    build:
+      run: npm run build
